@@ -466,3 +466,14 @@ li {
 .slider-content-left-top {
     transition: all 0.3s aese;
 }
+
+/*====slider js2=====*/
+.slider-content-left-button li.active {
+    border-top: 4px solid #fff200;
+    font-weight: 600;
+}
+
+.slider-content-left-button li {
+    border-top: 4px solid #ffffff ;
+    border-bottom: 4px solid #ffffff;
+}

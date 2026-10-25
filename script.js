@@ -44,3 +44,17 @@ function romoreactive (){
     let imgactive = document.querySelector(".active")
     imgactive.classList.remove("active")
 }
+
+//========slider2 =========
+function imgAuto () {
+    index = index + 1
+     
+    if(index>imgmuber.length-1){
+        index=0
+    }
+    romoreactive ()
+    document.querySelector(".slider-content-left-top").style.right = index *100+"%" 
+    imgmuberli[index].classList.add("active")
+    // console.log(index)
+}
+setInterval(imgAuto,5000)
