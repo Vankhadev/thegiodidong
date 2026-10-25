@@ -456,8 +456,13 @@ li {
 
 .slider-content-left-top-container {
     position: relative;
+    overflow: hidden;
 }
 
 .slider-content-left-top-container:hover i {
     opacity: 1;
+}
+
+.slider-content-left-top {
+    transition: all 0.3s aese;
 }
