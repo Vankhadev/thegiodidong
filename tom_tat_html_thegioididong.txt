@@ -1,0 +1,210 @@
+================================================================================
+           TỔNG HỢP TOÀN BỘ THẺ VÀ THUỘC TÍNH HTML (DỰ ÁN THẾ GIỚI DI ĐỘNG)
+================================================================================
+Dự án: Clone Giao diện Website Thế Giới Di Động (g:\thegioididong\index.html)
+Tài liệu học tập & tra cứu chi tiết dành cho người mới bắt đầu.
+
+--------------------------------------------------------------------------------
+PHẦN 1: CÁC KHÁI NIỆM CỐT LÕI TRONG HTML
+--------------------------------------------------------------------------------
+
+1. CẤU TRÚC MỘT THẺ HTML:
+   <ten_the thuoc_tinh="gia_tri">Nội dung hiển thị</ten_the>
+   - Thẻ đóng mở: <div>...</div>, <p>...</p>, <a>...</a>
+   - Thẻ tự đóng (Self-closing / Void elements): <img>, <input>, <meta>, <link> (không cần thẻ đóng </...>)
+
+2. PHÂN LOẠI PHẦN TỬ THEO HIỂN THỊ (DISPLAY):
+   A. Phần tử khối (Block-level elements):
+      - Đặc điểm: Luôn bắt đầu trên một dòng mới và chiếm toàn bộ chiều rộng (100% width) của thẻ cha nếu không set width.
+      - Có thể set width, height, padding, margin 4 hướng.
+      - Các thẻ trong bài: <div>, <section>, <header>, <nav>, <ul>, <li>, <p>, <h2>, <form>.
+   
+   B. Phần tử nội dòng (Inline elements):
+      - Đặc điểm: Chỉ chiếm đúng khoảng trống vừa đủ với nội dung bên trong, nằm trên cùng một dòng với các phần tử khác.
+      - Không thể set width và height trực tiếp.
+      - Các thẻ trong bài: <a>, <span>, <i>, <del>, <sup>.
+   
+   C. Phần tử nội dòng dạng khối (Inline-block elements):
+      - Nằm cùng dòng như inline nhưng lại có thể set được width, height, padding, margin.
+      - Các thẻ trong bài: <img>, <input>, <button>, <select>.
+
+
+--------------------------------------------------------------------------------
+PHẦN 2: DANH MỤC TOÀN BỘ 27 THẺ HTML XUẤT HIỆN TRONG PROJECT
+--------------------------------------------------------------------------------
+
+1. <!DOCTYPE html>
+   - Ý nghĩa: Khai báo chuẩn HTML5 cho trình duyệt hiểu cách biên dịch trang web.
+
+2. <html>
+   - Ý nghĩa: Phần tử gốc (root element) bao bọc toàn bộ trang web.
+   - Thuộc tính đi kèm: lang="en" (khai báo ngôn ngữ trang web).
+
+3. <head>
+   - Ý nghĩa: Chứa các thông tin cấu hình, dữ liệu mô tả (metadata), liên kết font chữ, CSS.
+   - Nội dung trong <head> không hiển thị trực tiếp lên giao diện người dùng.
+
+4. <meta>
+   - Ý nghĩa: Định nghĩa thông tin mô tả cho trang web.
+   - Các thuộc tính đi kèm trong bài:
+     + charset="UTF-8": Bảng mã ký tự UTF-8 (hỗ trợ hiển thị tiếng Việt có dấu không bị lỗi font).
+     + http-equiv="X-UA-Compatible" content="IE=edge": Hỗ trợ hiển thị tốt nhất trên trình duyệt Microsoft Edge.
+     + name="viewport" content="width=device-width, initial-scale=1.0": Tối ưu giao diện hiển thị chuẩn trên màn hình di động (Responsive).
+
+5. <title>
+   - Ý nghĩa: Đặt tiêu đề cho tab trình duyệt ("Thế Giới Di Động").
+
+6. <link>
+   - Ý nghĩa: Nhúng các file tài nguyên bên ngoài vào HTML.
+   - Sử dụng trong bài:
+     + Nhúng file CSS tự viết: <link rel="stylesheet" href="./style.css">
+     + Nhúng Font Awesome (bộ icon): <link rel="stylesheet" href="https://cdnjs.cloudflare.com/...">
+
+7. <body>
+   - Ý nghĩa: Chứa toàn bộ nội dung hiển thị của trang web (ảnh, chữ, nút bấm, menu...).
+
+8. <header>
+   - Ý nghĩa: Thẻ ngữ nghĩa (semantic) đại diện cho phần đầu trang web.
+   - Trong bài: Dùng để chứa ảnh banner quảng cáo trên cùng của Thế Giới Di Động.
+
+9. <img>
+   - Ý nghĩa: Thẻ chèn hình ảnh. Thẻ tự đóng.
+   - Thuộc tính bắt buộc / thường dùng:
+     + src: Đường dẫn file ảnh (ví dụ: ./image/logo.png).
+     + alt: Văn bản thay thế mô tả ảnh (khi ảnh bị lỗi hoặc phục vụ SEO).
+   - LƯU Ý SỬA LỖI ĐÃ HỌC: Phải luôn đóng dấu ">" đúng cú pháp (<img src="..." alt="...">), không được viết dính <img src="..."</a> làm hỏng thẻ a!
+
+10. <nav>
+    - Ý nghĩa: Thẻ ngữ nghĩa đại diện cho thanh điều hướng chính của website (Navigation bar).
+    - Trong bài: Chứa logo, ô chọn địa chỉ nhận hàng, ô tìm kiếm, giỏ hàng, lịch sử đơn hàng...
+
+11. <div>
+    - Ý nghĩa: Thẻ khối đa năng nhất trong HTML (viết tắt của Division/Section).
+    - Dùng để gom nhóm các phần tử lại để dàn trang (Flexbox/Grid), căn giữa (.container), đặt vị trí (relative/absolute).
+
+12. <ul> (Unordered List)
+    - Ý nghĩa: Danh sách không có thứ tự (mặc định có dấu chấm đầu dòng).
+    - Dùng làm menu, danh sách danh mục sản phẩm, danh sách sao đánh giá.
+
+13. <li> (List Item)
+    - Ý nghĩa: Từng mục con bên trong thẻ <ul> hoặc <ol>.
+    - Quy tắc bắt buộc: Thẻ <li> chỉ được phép nằm trực tiếp bên trong <ul> hoặc <ol>.
+
+14. <a> (Anchor)
+    - Ý nghĩa: Thẻ tạo liên kết (link) chuyển trang hoặc gắn neo.
+    - Thuộc tính: href="..." (địa chỉ trang cần chuyển tới).
+
+15. <i> (Icon / Italic)
+    - Ý nghĩa: Thẻ tạo chữ nghiêng, nhưng trong lập trình web hiện đại thường dùng để nhúng Icon (Font Awesome) thông qua các class như "fa-solid fa-cart-shopping".
+
+16. <input>
+    - Ý nghĩa: Ô nhập liệu cho người dùng. Thẻ tự đóng.
+    - Trong bài:
+      + <input type="text" placeholder="Bạn tìm gì..."> (Ô tìm kiếm sản phẩm).
+      + <input type="text" placeholder="Số Nhà, Tên Đường"> (Ô nhập địa chỉ).
+
+17. <button>
+    - Ý nghĩa: Nút bấm tương tác trên web.
+    - Trong bài: Nút "Xác Nhận" trong form chọn địa chỉ.
+
+18. <span>
+    - Ý nghĩa: Thẻ inline dùng để bọc một đoạn chữ hoặc ký tự ngắn nhằm mục đích style CSS riêng (như phần trăm giảm giá -6%, nút [x Đóng]).
+
+19. <form>
+    - Ý nghĩa: Biểu mẫu thu thập dữ liệu người dùng gửi về máy chủ.
+    - Trong bài: Form chọn địa chỉ nhận hàng (tỉnh thành, quận huyện, phường xã).
+
+20. <p> (Paragraph)
+    - Ý nghĩa: Thẻ hiển thị một đoạn văn bản. Mặc định là thẻ khối (block).
+
+21. <select>
+    - Ý nghĩa: Hộp chọn danh sách thả xuống (Dropdown list).
+    - Trong bài: Menu chọn Tỉnh/Thành phố, Quận/Huyện, Phường/Xã.
+
+22. <option>
+    - Ý nghĩa: Từng lựa chọn mục con nằm bên trong thẻ <select>.
+    - Thuộc tính: value="#" (giá trị sẽ được gửi đi khi chọn).
+
+23. <section>
+    - Ý nghĩa: Thẻ ngữ nghĩa đại diện cho một phân đoạn / khối nội dung độc lập trong trang web (như Menu bar, Banner Slider, Khối Flash Sale, Khối sản phẩm).
+
+24. <h2>
+    - Ý nghĩa: Thẻ tiêu đề cấp 2 (Heading 2).
+    - Dùng cho: "Địa Chỉ Nhận Hàng", "Săn Seal Onnline Mỗi Ngày".
+
+25. <del> (Delete)
+    - Ý nghĩa: Thẻ biểu thị nội dung bị xóa hoặc giá gốc trước khi giảm giá (mặc định trình duyệt gạch ngang giữa chữ).
+
+26. <sup> (Superscript)
+    - Ý nghĩa: Thẻ hiển thị ký tự phía trên (chỉ số trên).
+    - Trong bài: Dùng để hiển thị chữ "đ" nhỏ ở góc trên số tiền (20.900.000đ).
+
+27. <script>
+    - Ý nghĩa: Nhúng mã lệnh JavaScript vào trang web.
+    - Trong bài: <script src="./script.js"></script> đặt ở cuối thẻ <body> để đảm bảo giao diện tải xong trước khi chạy hiệu ứng logic.
+
+
+--------------------------------------------------------------------------------
+PHẦN 3: TỔNG HỢP CÁC THUỘC TÍNH HTML (ATTRIBUTES) TRONG BÀI
+--------------------------------------------------------------------------------
+
+1. class="..."
+   - Ý nghĩa: Phân lớp phần tử, dùng để gom nhiều phần tử cùng kiểu để CSS hoặc gán hiệu ứng JS. Một phần tử có thể có nhiều class (cách nhau bởi dấu cách).
+   - Ví dụ trong bài: class="container", class="slider-product-one-content-item".
+
+2. id="..."
+   - Ý nghĩa: Định danh DUY NHẤT cho một phần tử trên toàn trang web. Dùng để JavaScript tương tác chính xác.
+   - Ví dụ trong bài: id="adress-form", id="adress-close".
+
+3. href="..." (Hypertext Reference)
+   - Áp dụng: Thẻ <a>, <link>.
+   - Ý nghĩa: Đường dẫn đến trang web khác hoặc file tài nguyên CSS.
+
+4. src="..." (Source)
+   - Áp dụng: Thẻ <img>, <script>.
+   - Ý nghĩa: Nguồn dẫn đến file ảnh hoặc file mã JavaScript.
+
+5. alt="..." (Alternative Text)
+   - Áp dụng: Thẻ <img>.
+   - Ý nghĩa: Mô tả ảnh khi ảnh bị lỗi mạng hoặc giúp công cụ tìm kiếm hiểu nội dung ảnh.
+
+6. placeholder="..."
+   - Áp dụng: Thẻ <input>.
+   - Ý nghĩa: Chữ mờ gợi ý hiển thị bên trong ô nhập liệu trước khi người dùng gõ chữ.
+
+7. type="..."
+   - Áp dụng: Thẻ <input>.
+   - Ý nghĩa: Kiểu dữ liệu nhập (type="text", type="password", type="submit"...).
+
+8. value="..."
+   - Áp dụng: Thẻ <option>, <input>, <button>.
+   - Ý nghĩa: Giá trị dữ liệu của phần tử.
+
+9. action="..."
+   - Áp dụng: Thẻ <form>.
+   - Ý nghĩa: Đường dẫn URL nơi form sẽ gửi dữ liệu tới sau khi người dùng bấm Submit.
+
+10. style="..." (Inline style)
+    - Ý nghĩa: Viết mã CSS trực tiếp vào thẻ HTML (thường chỉ dùng khi thật cần thiết, ưu tiên viết vào file style.css).
+    - Ví dụ trong bài: <i style="margin-left: 6px;" class="fa-solid fa-caret-down"></i>.
+
+
+--------------------------------------------------------------------------------
+PHẦN 4: GIẢI THÍCH CHI TIẾT BẢN CHẤT CÁC LỖI KỸ THUẬT HTML ĐÃ SỬA
+--------------------------------------------------------------------------------
+
+1. Lỗi quên đóng dấu ">" ở thẻ <img> lồng trong thẻ <a>:
+   - Viết sai: <a href=""><img src="./image/xh1.webp"</a>
+   - Hậu quả nghiêm trọng: Trình duyệt bị nhầm lẫn cú pháp, không đóng được thẻ <a>. Thẻ <a> bị hở và tràn xuống bọc luôn toàn bộ các khối bên dưới (kể cả 2 nút mũi tên chuyển slide). Khi người dùng click nút mũi tên, trình duyệt coi là click vào thẻ <a> nên reload lại toàn bộ trang web!
+   - Cú pháp chuẩn: <a href=""><img src="./image/xh1.webp"></a>
+
+2. Lỗi chính tả class:
+   - Viết sai: class="containor" -> CSS .container không ăn -> Khung menu bị vỡ bung 100% màn hình.
+   - Bài học: Tên class trong HTML và CSS selector phải khớp nhau chính xác 100% từng ký tự.
+
+3. Khối container và cách căn giữa:
+   - HTML: <div class="container">
+   - CSS: max-width: 1200px; margin: auto;
+   - Bản chất: Giới hạn bề ngang tối đa 1200px, phần màn hình thừa ra ngoài sẽ được margin: auto chia đều sang 2 bên trái phải, giúp nội dung luôn nằm trang nhã ở chính giữa màn hình dù mở trên màn hình to cỡ nào.
+================================================================================
+
